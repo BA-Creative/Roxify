@@ -11,27 +11,24 @@ text_log() { echo "\n ### $1 "; }
 : '
     -f
     --force
+
+    v15
 '
 __force=false;
-for item in $@; do
-    if [ $item == "--force" ] || [ $item == "-f" ]; then
+base_url="https://raw.githubusercontent.com/BA-Creative/Roxify"
+branch="v15"
+
+for p in $@; do
+    if [ $p == "--force" ] || [ $p == "-f" ]; then
         __force=true
+    fi
+    if [[ $p == *"v"* ]]; then
+        branch=$p
     fi
 done
 
-# Create .shopifyignore file
-shopifyignore="${PWD}/.shopifyignore"
-if [ ! -f $shopifyignore ] || [ $__force == true ]; then
-    /bin/cat <<EOM > $shopifyignore
-src/*
-EOM
-fi
-
-# Create SRC directory
-source_dir="${PWD}/src/"
-if [ ! -d $source_dir ] || [ $__force == true ]; then
-  mkdir -p $source_dir; # /src
-  mkdir -p "${source_dir}css"; # /src/css
-  mkdir -p "${source_dir}scss"; # /src/scss
-  mkdir -p "${source_dir}js"; # /src/js
-fi
+files=(".shopifyignore")
+for file in "${files[@]}"
+do
+    curl -s "${base_url}/${branch}/${file}" -o "${PWD}/${file}"
+done
