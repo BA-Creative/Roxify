@@ -6,3 +6,7 @@ Open your Shopify project in the Terminal app, then run the following command
 ```
 curl -s https://raw.githubusercontent.com/BA-Creative/Roxify/main/init.sh | bash
 ```
+OR use a specific version
+```
+curl -s https://raw.githubusercontent.com/BA-Creative/Roxify/main/init.sh | bash -s v15
+```
