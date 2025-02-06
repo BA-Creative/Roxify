@@ -1,11 +1,31 @@
 #!/bin/bash
 
+clear;
 : '
     Run --> sh init.sh
     to initialise the project
 '
 
 text_log() { echo "\n ### $1 "; }
+
+echo "======================================================== \n";
+echo "Please enter a Shopify Store handle";
+echo "Example: \"online-store\" for online-store.myshopify.com \n";
+read -p "--> " myshopify;
+echo "\n========================================================";
+
+root="$PWD/$myshopify"
+
+if [ -d $root ]; then
+    echo "\n!!! Folder already exists. Please DELETE or RENAME the existing folder, then try again. \n";
+    exit;
+fi
+
+# Create directory
+mkdir -p $root;
+
+# Clone lastest version of Dawn
+git clone "https://github.com/Shopify/dawn.git" $root;
 
 # read bash parameters
 : '
@@ -30,5 +50,5 @@ done
 files=(".shopifyignore")
 for file in "${files[@]}"
 do
-    curl -s "${base_url}/${branch}/${file}" -o "${PWD}/${file}"
+    curl -s "$base_url/$branch/$file" -o "$root/$file"
 done
