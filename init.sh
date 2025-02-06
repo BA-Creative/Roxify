@@ -8,11 +8,11 @@ clear;
 
 text_log() { echo "\n ### $1 "; }
 
-echo "======================================================== \n";
-echo "Please enter a Shopify Store handle";
-echo "Example: \"online-store\" for online-store.myshopify.com \n";
+printf "======================================================== \n";
+printf "Please enter a Shopify Store handle \n";
+printf "Example: \"online-store\" for online-store.myshopify.com \n\n";
 read -p "--> " myshopify;
-echo "\n========================================================";
+printf "\n\n========================================================\n\n";
 
 root="$PWD/$myshopify"
 
