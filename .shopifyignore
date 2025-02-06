@@ -1,1 +1,9 @@
-src/*
+source/*
+package.json
+
+.prettierrc.json
+.theme-check.yml
+LICENSE.md
+README.md
+release-notes.md
+translation.yml
