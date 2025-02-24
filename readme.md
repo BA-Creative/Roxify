@@ -6,9 +6,9 @@ This should only be used on a fresh copy of the Dawn theme as it may overwrite a
 # How to use
 Open your Shopify project in the Terminal app, then run the following command
 ```
-curl -s https://raw.githubusercontent.com/BA-Creative/Roxify/main/init.sh | bash
+bash <(curl -s https://raw.githubusercontent.com/BA-Creative/Roxify/main/init.sh)
 ```
 OR use a specific version
 ```
-curl -s https://raw.githubusercontent.com/BA-Creative/Roxify/main/init.sh | bash -s v15
+bash <(curl -s https://raw.githubusercontent.com/BA-Creative/Roxify/main/init.sh) -s v15
 ```
