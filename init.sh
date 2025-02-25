@@ -52,11 +52,11 @@ mkdir -p $root;
 # Clone lastest version of Dawn
 git clone "https://github.com/Shopify/dawn.git" $root;
 
-# Remove .git folder
-rm -rf "$root/.git";
-
 # Clone Roxify
 curl -L "https://api.github.com/repos/$repo/tarball/$branch" | tar xzf - --strip-components=1 -C $root;
+
+# Remove .git folder
+rm -rf "$root/.git";
 
 # Done
 print_done_and_exit;
