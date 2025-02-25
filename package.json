@@ -4,8 +4,10 @@
   "description": "This repo is designed to work with Shopify Dawn theme v15.x.x",
   "main": "index.js",
   "scripts": {
-    "test": "shopify theme list --store=${PWD##*/}",
-    "dev": "sass --watch assets:assets --style compressed & shopify theme dev --store=\"${PWD##*/}\""
+    "connect": "shopify theme list --store=${PWD##*/}",
+    "dev": "shopify theme dev --store=\"${PWD##*/}\"",
+    "scss": "sass --watch sources/scss:assets --style compressed",
+    "tw": "npx tailwindcss -i ./sources/css/tw.css -o ./assets/tw.css --watch"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/BA-Creative/Roxify/issues"
   },
-  "homepage": "https://github.com/BA-Creative/Roxify#readme"
+  "homepage": "https://github.com/BA-Creative/Roxify#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.8",
+    "tailwindcss": "^4.0.8"
+  }
 }
