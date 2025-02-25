@@ -22,10 +22,10 @@ bash <(curl -s https://raw.githubusercontent.com/BA-Creative/Roxify/main/init.sh
 ```
 
 # CLI Commands
-After the installation, these command will be available to you
+After the installation, these commands will be available for use
 - `npm run init` - Install project dependencies, inject asset files to layout/theme.liquid, and initialise a Git repo
 - `npm run connect` - Test connection to Shopify store
 - `npm run dev` - Create Shopify local development
 - `npm run scss` - Run SCSS watch (sources/scss to assets)
-- `npm run tw:watch` - Run Tailwind watch (/sources/css/tw.css to /assets/tw.css)
-- `npm run tw:build` - Run Tailwind minify (/sources/css/tw.css to /assets/tw.min.css)
+- `npm run tw:watch` - Run Tailwind watch (sources/css/tw.css to assets/tw.css)
+- `npm run tw:build` - Run Tailwind minify (sources/css/tw.css to assets/tw.min.css)
