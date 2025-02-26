@@ -11,6 +11,7 @@
     "init": "npm install && npm run inject_clear && npm run inject_head && npm run inject_body && git init && git add . && git commit -m \"Initial commit\" && git branch -M main",
     "connect": "shopify theme list --store=${PWD##*/}",
     "dev": "shopify theme dev --store=\"${PWD##*/}\"",
+    "pull": "shopify theme pull -d --store=\"${PWD##*/}\"",
     "scss": "sass --watch sources/scss:assets --style compressed",
     "tw:watch": "npx tailwindcss -i ./sources/css/tw.css -o ./assets/tw.css --watch",
     "tw:build": "npx tailwindcss -i ./sources/css/tw.css -o ./assets/tw.min.css --minify"
